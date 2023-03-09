@@ -11,7 +11,7 @@ export default function App() {
 
       <hr />
 
-      <Results />
+      <Results title={'Results'} />
     </div>
   );
 }

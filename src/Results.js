@@ -5,10 +5,12 @@ import ALL_EMOJIS from './data/ALL_EMOJIS.json';
 const GRINNING_EMOJI = ALL_EMOJIS[2];
 const JOY_EMOJI = ALL_EMOJIS[5];
 
-export const Results = () => {
+export const Results = (props) => {
+  const title = props.title;
+
   return (
     <>
-      <h2>Results</h2>
+      <h2>{title}</h2>
 
       <ul className="list-group" style={{ cursor: 'pointer' }}>
         <li className="list-group-item list-group-item-action">
