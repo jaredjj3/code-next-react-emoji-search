@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Header } from './Header';
 import { Results } from './Results';
 import ALL_EMOJIS from './data/ALL_EMOJIS.json';
@@ -10,13 +10,10 @@ export default function App() {
   const [emojis, setEmojis] = useState(ALL_EMOJIS);
   const [query, setQuery] = useState('');
 
-  useEffect(() => {
-    const nextEmojis = search(query);
-    setEmojis(nextEmojis);
-  }, [query]);
-
   const onChange = (query) => {
     setQuery(query);
+    const nextEmojis = search(query);
+    setEmojis(nextEmojis);
   };
 
   const [recentEmojis, setRecentEmojis] = useLocalStorage('recent-emojis', []);
